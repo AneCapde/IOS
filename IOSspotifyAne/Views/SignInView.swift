@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SignInView: View {
     @ObservedObject var userViewModel: UserViewModel
+    @StateObject var data = Data()
     let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
     
     
@@ -33,7 +34,7 @@ struct SignInView: View {
                 .cornerRadius(5.0)
                 .padding()
             
-            NavigationLink(destination: MenuView()) {
+            NavigationLink(destination: MenuView(data: data)) {
             Text("SIGN IN")}
                 .font(.headline)
                 .foregroundColor(.white)
